@@ -1,0 +1,27 @@
+<p>商品情報編集</p>
+
+<%= form_with model: @item, url:admin_item_path(@item) do |f| %>
+    
+    <p>商品名</p>
+    <%= f.text_field:name %>
+    
+    <P>商品説明</P>
+    <%= f.text_area:introduction %>
+    
+    <p>ジャンル</p>
+    <%= f.select :genre_id, [["ケーキ", "ケーキ"], ["焼き菓子", "焼き菓子"], ["アイス", "アイス"], ["ギフト", "ギフト"]], include_blank: "選択して下さい" %>
+    
+    <p>税抜き価格</p>
+    <%= f.text_field:price %>
+    
+    <p>販売ステータス</p>
+    <%= f.radio_button :is_active, true %>
+    <%= f.label :is_active, "販売中",value:true %>
+    <%= f.radio_button :is_active, false %>
+    <%= f.label :is_active, "発売前",value:false %>
+    
+    <%= f.submit '保存' %>
+    
+    
+    
+<% end %>

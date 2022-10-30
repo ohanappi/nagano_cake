@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="nagano_cake/app/assets/stylesheet/admin/items.scss">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class= "col-lg-4">
+            <p class="newitem">商品新規登録画面</p>
+        </div>
+    </div>
+    
+    <div class="row">
+         
+         <div class= "col-sm-12, col-md-8, col-lg-5, px-5 px-sm-0, mx-auto"> 
+            <%= form_with model: @item,url:admin_items_path do |f| %>
+                <p>商品名</p>
+                <%= f.text_field :name %>
+                <p>商品説明</p>
+                <%= f.text_area :introduction %>
+                <p>ジャンル</p>
+                <%= f.select :genre_id, [["ケーキ", "ケーキ"], ["焼き菓子", "焼き菓子"], ["アイス", "アイス"], ["ギフト", "ギフト"]], include_blank: "選択して下さい" %>
+                <p>税抜き価格</p>
+                <%= f.text_field :price %>
+                <p>販売ステータス</p>
+                <%= f.radio_button :is_active, true %>
+                <%= f.label :is_active, "販売中",value:true %>
+                <%= f.radio_button :is_active, false %>
+                <%= f.label :is_active, "販売停止中",value:false %>
+                <br>
+                
+                <%= f.submit '新規投稿' %>
+                
+                
+            <% end %>
+        </div>
+        
+    </div>
+</div>
