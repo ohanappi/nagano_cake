@@ -1,1 +1,28 @@
-<h4>トップページ</h4>
+    <div class="container">
+        <div class="row">
+            <div class='col-lg-3'>
+                <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+                    <h4>ジャンル検索</h4>
+                    <table>
+                            <% @genres.each do |genre| %>
+                            <tr><td><%= genre.name %></td></tr>
+                            <% end %>
+                    </table>
+                </div>
+            </div>
+            
+            <div class='col-lg-7'>
+                <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+                    <div class='top_message'>
+                        <p>
+                            ようこそ、ながのCAKEへ！<br>
+                            このサイトは、ケーキ販売のECサイトになります。<br>
+                            会員でない方も商品の閲覧はできますが、<br>
+                            購入には会員登録が必要になります。
+                        </p>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+

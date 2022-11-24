@@ -15,7 +15,7 @@
                 
                 <tr>
                 <td>ジャンル</td>
-                <td><%= @item.genre_id %></td>
+                <td><%= @item.genre.name %></td>
                 </tr>
                 
                 <tr>
@@ -25,7 +25,13 @@
                 
                 <tr>
                     <td><p>販売ステータス</p></td>
-                    <td><%= @item.is_active %></td>
+                    <td><% if @item.is_active %>
+                        <p>販売中</p>
+                        <% else %>
+                        <p>販売停止</p>
+                        <% end %>
+                    
+                    </td>
                 </tr>
             </table>
             

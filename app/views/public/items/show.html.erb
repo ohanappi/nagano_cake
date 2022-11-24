@@ -1,0 +1,21 @@
+<p>ジャンル検索</p>
+<% @genres.each do |genre| %>
+
+    <%= genre.name %>
+
+<% end %>
+
+<P>商品詳細画面</P>
+
+<h4><%= @item.name %></h4>
+
+<p><%= @item.introduction %></p>
+
+<p>¥</p><p><%= @item.price %></p>
+
+<%= form_with model:@cart_item do |f| %>
+    <%= f.hidden_field :item_id, :value => @item.id %>
+    <%= f.hidden_field :customer_id, :value => @customer.id %>
+    <%= f.select :amount, *[1..10] %>
+    <%= f.submit 'カートに入れる' %>
+<% end %>

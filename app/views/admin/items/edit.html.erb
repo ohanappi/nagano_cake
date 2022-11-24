@@ -9,8 +9,8 @@
     <%= f.text_area:introduction %>
     
     <p>ジャンル</p>
-    <%= f.select :genre_id, [["ケーキ", "ケーキ"], ["焼き菓子", "焼き菓子"], ["アイス", "アイス"], ["ギフト", "ギフト"]], include_blank: "選択して下さい" %>
-    
+    <%= f.collection_select :genre_id, Genre.all, :id, :name,include_blank: "選択して下さい" %>
+
     <p>税抜き価格</p>
     <%= f.text_field:price %>
     

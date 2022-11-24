@@ -5,6 +5,7 @@
 <div class="contaier">
     <div class="row">
         <div class= "col-sm-12, col-md-8, col-lg-5, px-5 px-sm-0, mx-auto">
+            <%= link_to '新規追加', new_admin_item_path %>
             <p>商品一覧</p>
             <table cellspacing="3px"> 
                 <thead>
@@ -25,9 +26,20 @@
                             <%= item.name %>
                             <% end %>
                         </td>
+                        
                         <td><%= item.price %></td>
-                        <td><%= item.genre_id %></td>
-                        <td><%= item.is_active %></td>
+
+                        <td>
+                            <%= item.genre.name %>
+                        </td>
+
+                        <td>
+                            <% if item.is_active %>
+                            <p>販売中</p>
+                            <% else %>
+                            <P>販売停止</P>
+                            <% end %>
+                        </td>
                         
                     </tr>
                     <% end %>
