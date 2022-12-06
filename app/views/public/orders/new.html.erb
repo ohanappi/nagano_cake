@@ -1,4 +1,5 @@
 <%= form_with model: @order, url:orders_confirm_path do |f| %>
+<!--urlのコンマ以降いらないかも-->
     <strong><p>支払い方法</p></strong>
     <%= f.radio_button :payment_method, "credit_card" %>
     <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
